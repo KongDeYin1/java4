@@ -17,36 +17,74 @@
 3.了解异常的使用方法，并在程序中根据输入情况做异常处理  
 
 ## 试验过程
-1.首先对整体试验进行构思，需要一个类（博士研究生）并且设计两个接口一个为学生本身 一个为研究生助教。  
-``` 
-class PhD implements Student, Teacher {
-    public String name;
-    public String sex;
-    public int age;
-    public int tuition;
-    public double salary;
-
-    public PhD(String name, String sex, int age) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-    }  
+//interface 接口
+	public interface TeacherInterface {
+		public abstract void setPay(float pay);// 设置教师的工资
+		public abstract void getPay(float pay);// 获取教师的工资
+	}
+	public interface StudentInterface {
+		public abstract void setFee(float fee);// 设置学生的学费
+		public abstract void getFee(float fee);// 获取学生的学费
+	}
 ```
 
-2.将phd（研究生）类利用 implements方法继承给student和teacher  
-3.重写接口中的所有方法    
-4.最后在test类中利用数组的方式将两个人员进行输出在该环节用到了scanner进行输入  
-5.本实验设计到税收问题改程序编程大致内容如下  
-.........................
 ```
-final double tax_rate = 0.1;
-        for (int i = 0; i < s.length; i++) {
-            double net = t[i].checkSalary() * 12 - s[i].checkTuition();
-            double totalTax = net * tax_rate;
-            System.out.printf("%s的年应纳税金额为：%.2f\n", t[i].getName(), totalTax);
-        }
-    }  
-``` 
+	public Graduate(String name,String sex,int age){          //有参构造方法
+			this.name=name;
+			this.sex=sex;
+			this.age=age;
+			}
+   Graduate() {                                            //无参构造方法
+		}
+```
+
+```
+//实现属性的封装  (例如)
+	public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+```
+
+```
+// 实现接口中的抽象方法
+		public void setPay(float pay) {
+			this.pay = pay * 12;       //月收入*12=年收入
+			System.out.println("年收入为：" + this.pay);
+		}
+		
+		public void getPay(float pay) {
+			this.pay = pay * 12;
+			System.out.println("年收入为：" + this.pay);
+		}
+```
+```
+//boolean是java中的布尔型（逻辑型）数据类型
+	public boolean paytaxes(){    
+			if ((this.pay - this.fee) < 5000) {
+				System.out.println("纳税金额为:"+(this.pay -this.fee)*0.03f+"\n");
+				return true;           // true 代表“真”
+			}
+			else {
+				System.out.println("纳税金额为:"+(this.pay -this.fee)*0.03f+"\n");
+			    return false;          //false 代表“假”
+		} 
+		}
+		}
+```
+```
+//调用前面的boolean
+boolean flag = g.paytaxes();
+		if (flag) {
+			System.out.println("您好，您不满足缴税条件，无需纳税。");
+				}
+		else {
+			  System.out.println("您好，您满足纳税条件，需要纳税！");
+				}
+	}
+```
 ## 核心方法  
 1.scanner输入方法（注意int tuition = scanner.nextInt();输入条件的判定）
 2.接口基本知识（接口的定义、接口重写涉及到抽象方法和非抽象方法是否重写：抽象类不重写）  
