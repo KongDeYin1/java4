@@ -89,8 +89,12 @@ boolean flag = g.paytaxes();
 1.scanner输入方法（注意int tuition = scanner.nextInt();输入条件的判定）
 2.接口基本知识（接口的定义、接口重写涉及到抽象方法和非抽象方法是否重写：抽象类不重写）  
 3.异常报错try{} catch{}
+
 ## 试验结果
+https://github.com/KongDeYin1/java4/blob/main/1.PNG
+
 
 ## 试验心得  
 本次试验涉及到接口的继承该知识内容可以对照类的父类子类继承进行学习，异常报错知识点try{}后可以接多个catch代码块，在多个catch代码块下顺序应该是子类在上父类在下 级别越高顺序越靠下。
+
 
