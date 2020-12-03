@@ -16,8 +16,10 @@
 2.掌握Java中接口的定义，熟练掌握接口的定义形式以及接口的实现方法  
 3.了解异常的使用方法，并在程序中根据输入情况做异常处理  
 
-## 试验过程
-//interface 接口
+
+##### 实验里的核心代码、注释
+```
+ //interface 接口
 	public interface TeacherInterface {
 		public abstract void setPay(float pay);// 设置教师的工资
 		public abstract void getPay(float pay);// 获取教师的工资
@@ -36,6 +38,9 @@
 			}
    Graduate() {                                            //无参构造方法
 		}
+```
+
+```
 //实现属性的封装  (例如)
 	public String getName() {
 			return name;
@@ -45,6 +50,8 @@
 		}
 ```
 
+```
+// 实现接口中的抽象方法
 		public void setPay(float pay) {
 			this.pay = pay * 12;       //月收入*12=年收入
 			System.out.println("年收入为：" + this.pay);
@@ -54,8 +61,9 @@
 			this.pay = pay * 12;
 			System.out.println("年收入为：" + this.pay);
 		}
-
-
+```
+```
+//boolean是java中的布尔型（逻辑型）数据类型
 	public boolean paytaxes(){    
 			if ((this.pay - this.fee) < 5000) {
 				System.out.println("纳税金额为:"+(this.pay -this.fee)*0.03f+"\n");
@@ -67,8 +75,9 @@
 		} 
 		}
 		}
-
-
+```
+```
+//调用前面的boolean
 boolean flag = g.paytaxes();
 		if (flag) {
 			System.out.println("您好，您不满足缴税条件，无需纳税。");
@@ -77,12 +86,9 @@ boolean flag = g.paytaxes();
 			  System.out.println("您好，您满足纳税条件，需要纳税！");
 				}
 	}
-## 核心方法  
-1.scanner输入方法（注意int tuition = scanner.nextInt();输入条件的判定）
-2.接口基本知识（接口的定义、接口重写涉及到抽象方法和非抽象方法是否重写：抽象类不重写）  
-3.异常报错try{} catch{}
+```
 
-## 试验结果
+### 试验过程
 https://github.com/KongDeYin1/java4/blob/main/1.PNG
 
 
