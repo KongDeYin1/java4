@@ -89,7 +89,7 @@ boolean flag = g.paytaxes();
 ```
 
 ### 实验结果
-https://github.com/KongDeYin1/java4/blob/main/1.PNG
+![](https://github.com/KongDeYin1/java4/blob/main/1.PNG)
 
 
 ## 实验心得  
